@@ -1,0 +1,1 @@
+export { Bilgi } from "./Bilgi"

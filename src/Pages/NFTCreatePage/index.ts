@@ -1,0 +1,1 @@
+export { NFTCreatePage } from "./NFTCreatePage"

@@ -2,16 +2,17 @@ import { useRef } from 'react'
 import './App.css'
 import { Container, Footer, useMantineTheme, createStyles } from '@mantine/core';
 
-import { Home } from "./Pages/Home"
+//import { Home } from "./Pages/Home"
 import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom"
 import { NavBarX } from "./components/organisms/NavBarX"
 
 import { About } from "./Pages/About"
-import { Bilgi } from "./Pages/Bilgi"
+//import { Bilgi } from "./Pages/Bilgi"
 import { Donate } from "./Pages/Donate"
-import { Token } from "./Pages/Token"
+//import { Token } from "./Pages/Token"
 import { Nft } from './Pages/Nft';
 import { NFTCreatePage } from './Pages/NFTCreatePage';
+import { HeaderActionProps } from './components/organisms/NftCard/types';
 
 
 
@@ -38,6 +39,50 @@ function App() {
   // className={cx(classes.img)
   const { classes, cx } = useStyles();
 
+/*   interface HeaderActionProps {
+    links: { link: string; label: string; links: { link: string; label: string }[] }[];
+  } */
+
+  const data: HeaderActionProps["links"] = [
+   
+      {
+        link: "/",
+        label: "NFT Market",
+      
+      },
+      {
+        link: "/nftCreate",
+        label: "NFT Create Page",
+      
+      },
+
+      {
+        link: "/about",
+        label: "About",
+      
+      },
+
+      {
+        link: "/donate",
+        label: "Donate",
+      
+      }
+    ,
+  ];
+
+
+ /*  link: "/home",
+        label: "Home",
+        links: [
+          {
+            link: "/home/about",
+            label: "About",
+          },
+          {
+            link: "/home/contact",
+            label: "Contact",
+          },
+        ], */
 
   console.log("1")
   console.log(window.location.pathname)
@@ -54,7 +99,7 @@ function App() {
 
 
       <HashRouter>
-        <NavBarX />
+        <NavBarX links={data} />
         <Routes>
           <Route path="/" element={<Nft />} />
       

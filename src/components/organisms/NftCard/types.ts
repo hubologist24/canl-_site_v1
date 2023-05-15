@@ -39,6 +39,11 @@ export interface NftTypeInterface {
  nftType:string
 }
 
+
+export interface HeaderActionProps {
+    links: { link: string; label: string; links?: { link: string; label: string }[] }[];
+  }
+
 export interface ButttonInterface {
     
     tokenId: number,
